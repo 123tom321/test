@@ -1,0 +1,35 @@
+package git大作业;
+
+import java.util.ArrayList;
+
+public class Params implements IParams{
+	ArrayList<Integer> init; //输入入库车辆列表
+	ArrayList<Integer> args;//三种车位列表数
+	
+public Params() {
+	this.init=new ArrayList<Integer>();
+    this.args=new ArrayList<Integer>();
+}
+
+public void configCapacity(int v) {//依次把车位数插入列表
+	this.init.add(v);
+}
+public void planParking(int car) {//依次把入库车辆信息列入列表
+	args.add(car);
+}
+	
+	public int getBig() {//获取大车辆
+		return init.get(0);
+	}
+
+	public int getMedium() {//获取中车辆
+		return init.get(1);
+	}
+	
+	public int getSmall() {//获取小车辆
+		return init.get(2);
+	}
+
+	public ArrayList<Integer> getPlanParking() {
+		return args;
+	}
