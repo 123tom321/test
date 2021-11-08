@@ -1,0 +1,43 @@
+package git大作业;
+
+import java.util.ArrayList;
+
+public class ParkingSystem {
+int [] Park;//车位大小数
+int [] parknum;//车位停车数
+ArrayList<Boolean> result;
+
+public ParkingSystem(Integer Big,Integer Medium,Integer Small) {
+	Park=new int[3];
+	parknum=new int[3];
+	Park[0]=Big;
+	Park[1]=Medium;
+	Park[2]=Small;
+	result=new ArrayList<Boolean>();
+	result.add(null);
+}
+public void print() {
+	System.out.println(result);
+}
+
+public boolean addCar(int carType) {
+  int index=carType-1;
+  if(parknum[index]==Park[index]){
+	  result.add(false);
+	  return false;
+  }
+  else {
+	 parknum[index]++;
+  }
+  result.add(true);
+  return true;
+}
+public static void main(String[] args)throws Exception{
+	IParams params=IParking.parse();
+	ParkingSystem p=new ParkingSystem(params.getBig(), params.getMedium(), params.getSmall());
+	ArrayList<Integer> plan=params.getPlanParking();
+	for(int i=0;i<plan.size();i++) {
+	p.addCar(plan.get(i));
+	}
+	p.print();
+}
