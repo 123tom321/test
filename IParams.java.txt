@@ -6,3 +6,7 @@ public int getMedium();//中型车位数目
 public int getSmall();//小型车位数目
 public ArrayList<Integer>getPlanParking();//停车车位列表
 }
+
+
+
+
