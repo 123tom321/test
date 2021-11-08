@@ -1,0 +1,8 @@
+package git大作业;
+import java.util.ArrayList;
+public interface IParams {
+public int getBig();//大型车位数目
+public int getMedium();//中型车位数目
+public int getSmall();//小型车位数目
+public ArrayList<Integer>getPlanParking();//停车车位列表
+}
